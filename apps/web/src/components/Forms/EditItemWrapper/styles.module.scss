@@ -1,0 +1,36 @@
+.wrapper {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(1px 1px 2px hsla(0, 0%, 0%, 0));
+  transition: 0.2s all linear;
+
+  .floating-buttons {
+    position: absolute;
+    right: 4rem;
+    top: 0px;
+    opacity: 0;
+    transition: inherit;
+    z-index: -1;
+
+    > div {
+      > button:first-of-type {
+        border-top-left-radius: 8px;
+      }
+      > button:last-of-type {
+        border-top-right-radius: 8px;
+      }
+    }
+  }
+
+  .item {
+    z-index: 1;
+  }
+
+  &:hover {
+    filter: drop-shadow(1px 1px 2px hsl(0deg 0% 0% / 0.3));
+    .floating-buttons {
+      opacity: 1;
+      top: -28px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extends": ["//"],
+  "pipeline": {
+    "panda": {
+      "cache": true,
+      "outputs": ["./styled-system/**"],
+      "inputs": ["./panda.config.ts"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    }
+  }
+}

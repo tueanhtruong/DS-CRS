@@ -1,0 +1,58 @@
+{
+  "name": "ui",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "src",
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup --format esm,cjs --dts --external react",
+    "clean": "rm -rf dist && rm -rf styled-system",
+    "dev": "wireit",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "prepare": "pnpm run panda",
+    "panda": "panda",
+    "test": "jest"
+  },
+  "imports": {
+    "~styled-system/*": "./styled-system/*"
+  },
+  "wireit": {
+    "dev:css": {
+      "command": "panda --watch"
+    },
+    "dev:js": {
+      "command": "tsup src/index.tsx --format esm,cjs --watch --dts --external react"
+    },
+    "dev": {
+      "dependencies": [
+        "dev:css",
+        "dev:js"
+      ]
+    }
+  },
+  "jest": {
+    "preset": "jest-presets/jest/node"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "jest": "^26.6.3",
+    "jest-presets": "workspace:*",
+    "react": "^18.2.0",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.2.3"
+  },
+  "dependencies": {
+    "react-dom": "^18.2.0"
+  }
+}

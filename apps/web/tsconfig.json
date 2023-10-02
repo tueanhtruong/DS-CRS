@@ -1,0 +1,18 @@
+{
+  "exclude": ["node_modules"],
+  "extends": "tsconfig/nextjs.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ES6",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "~styled-system/*": ["./styled-system/*"]
+    }
+  },
+  "include": ["src", "styled-system", "next-env.d.ts", ".next/types/**/*.ts"]
+}

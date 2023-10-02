@@ -1,0 +1,10 @@
+.grid-item {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  @apply p-1 border-dashed border border-gray-200 bg-white;
+
+  & div[data-grid-item-slot-index] {
+    @apply min-h-[80px] border border-gray-200;
+  }
+}
