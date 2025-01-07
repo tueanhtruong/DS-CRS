@@ -5,6 +5,7 @@ ARG BUILD_TYPE
 
 ENV BUILD_TYPE=${BUILD_TYPE}
 
+RUN apk add --no-cache openssl
 RUN apk add --no-cache libc6-compat
 RUN corepack enable
 RUN corepack prepare pnpm@latest --activate

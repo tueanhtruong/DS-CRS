@@ -1,6 +1,6 @@
 import { JsonValue } from '@commons/types';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsJSON, IsString, MaxLength } from 'class-validator';
+import { IsObject, IsString, MaxLength } from 'class-validator';
 
 export class CreateUserDto {
   @ApiProperty({
@@ -23,6 +23,6 @@ export class CreateUserDto {
     description: 'meta date of user account',
     example: { key: 'value' },
   })
-  @IsJSON()
+  @IsObject()
   metaData: JsonValue;
 }
