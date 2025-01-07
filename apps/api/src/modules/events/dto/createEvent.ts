@@ -14,7 +14,9 @@ export class CreateEventDto {
   @ApiProperty({
     description: 'meta date of event',
     example: { key: 'value' },
+    required: false,
   })
+  @IsOptional()
   @IsObject()
   metaData: JsonValue;
 

@@ -1,7 +1,9 @@
-name: Lint # name of the action (displayed in the github interface)
+name: Lint
 
 on: # event list
   push: # on a push request
+    branches: # on which branches
+      - master
 
 env: # environment variables (available in any part of the action)
   NODE_VERSION: 20

@@ -42,12 +42,6 @@ export class UsersService {
         username: true,
         displayName: true,
         metaData: true,
-        events: {
-          select: {
-            id: true,
-            metaData: true,
-          },
-        },
       },
     });
     return users;
@@ -73,6 +67,18 @@ export class UsersService {
     const validUser = await this.prisma.user.findFirst({
       where: {
         username: user.username,
+      },
+      select: {
+        events: {
+          select: {
+            id: true,
+            metaData: true,
+          },
+        },
+        username: true,
+        displayName: true,
+        id: true,
+        metaData: true,
       },
     });
 
