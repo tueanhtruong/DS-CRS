@@ -1,4 +1,5 @@
 packages/**/dist
+packages/sdk/index.ts
 apps/**/dist
 .eslintrc.cjs
 dist
