@@ -1,6 +1,6 @@
 {
   "extends": ["//"],
-  "pipeline": {
+  "tasks": {
     "panda": {
       "cache": true,
       "outputs": ["./styled-system/**"],
